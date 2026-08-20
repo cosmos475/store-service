@@ -1,0 +1,33 @@
+{
+  "name": "Store Service Bot",
+  "description": "A Telegram bot for managing and delivering notes/products to users, with admin panel, subscriptions, and archiving.",
+  "keywords": ["telegram", "bot", "aiogram", "store", "delivery"],
+  "repository": "https://github.com/cosmos475/store-service",
+  "stack": "heroku-24",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Get this from @BotFather on Telegram.",
+      "required": true
+    },
+    "MONGO_URI": {
+      "description": "MongoDB connection string (e.g. from MongoDB Atlas free tier).",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Your personal Telegram numeric user ID (get from @userinfobot). The bot's admin.",
+      "required": true
+    }
+  },
+  "addons": []
+}
